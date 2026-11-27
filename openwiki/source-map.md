@@ -58,21 +58,21 @@ sources:
     resource: repo://libs/partners/openai/langchain_openai/decisions/base.py
   - id: openwiki-source-bd29e79613d5f366a00068f5
     resource: repo://libs/standard-tests/langchain_tests/base.py
-generated: { by: "openwiki/0.5.0", at: "2026-11-24T08:17:18.845Z" }
+generated: { by: "openwiki/0.5.0", at: "2026-11-27T08:17:03.934Z" }
 verified:
   - by: openwiki/0.5.0
-    at: 2026-11-24T08:17:18.845Z
+    at: 2026-11-27T08:17:03.934Z
 ---
 
 ## Overview
 
 This page provides a quick reference for locating code by topic in the LangChain monorepo. The repository is organized as a multi-package workspace with a three-layer architecture:
 
-- **langchain-core** (v1.8.4): Base abstractions for messages, runnables, tools, prompts, language models, callbacks, and refusal handling
+- **langchain-core** (v1.8.5): Base abstractions for messages, runnables, tools, prompts, language models, callbacks, and refusal handling
 - **langchain** (v1.5.2): Orchestration, agent factory, middleware composition, and model initialization
-- **langchain-classic** (v1.0.8): Legacy chains, memory, retrieval abstractions, and backward compatibility
+- **langchain-classic** (v1.1.0): Legacy chains, memory, retrieval abstractions, and backward compatibility
 - **partners** (`langchain-*` packages): Provider-specific implementations (OpenAI, Anthropic, Ollama, etc.)
-- **text-splitters** (v1.1.3): Text splitting and chunking utilities
+- **text-splitters** (v1.2.0): Text splitting and chunking utilities
 - **model-profiles** (v0.0.6): LLM metadata and capability profiles
 - **standard-tests** (shared): Ecosystem test contracts and conformance suites
 
@@ -187,7 +187,7 @@ Use this map to navigate directly to the code responsible for a given concept, u
 │   ├── Makefile
 │   └── pyproject.toml
 │
-├── langchain_v1/                   # langchain: Orchestration and agents (v1.5.0)
+├── langchain_v1/                   # langchain: Orchestration and agents (v1.5.2)
 │   ├── langchain/
 │   │   ├── agents/
 │   │   │   ├── factory.py          # Agent factory: graph construction, node orchestration
@@ -307,7 +307,7 @@ Use this map to navigate directly to the code responsible for a given concept, u
 
 ## Architecture Layers
 
-### Layer 1: langchain-core (Base Abstractions, v1.8.2)
+### Layer 1: langchain-core (Base Abstractions, v1.8.5)
 Core interfaces and implementations used by all other packages:
 - **Message protocol**: AIMessage, HumanMessage, SystemMessage, ToolMessage with rich content blocks, including standard refusal blocks
 - **Runnable protocol**: Composable units with `invoke()`, `stream()`, `batch()` and async variants
@@ -553,14 +553,14 @@ Refusals are now handled uniformly across providers using standard content block
 
 ```
 User Applications
-  ├─→ langchain (v1.5.0)
-  │    ├─→ langchain-core (v1.8.2)
+  ├─→ langchain (v1.5.2)
+  │    ├─→ langchain-core (v1.8.5)
   │    └─→ LangGraph (state machines, runtime)
   │
   ├─→ langchain-core (direct use)
   │    └─→ LangSmith (tracing), httpx (HTTP), tenacity (retry), pydantic
   │
-  ├─→ langchain-classic (v1.0.8) [backward compat]
+  ├─→ langchain-classic (v1.1.0) [backward compat]
   │    └─→ langchain-core, SQLAlchemy, LangSmith
   │
   └─→ Partner Packages (langchain-openai, langchain-anthropic, etc.)

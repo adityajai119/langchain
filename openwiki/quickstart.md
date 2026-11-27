@@ -40,10 +40,10 @@ sources:
     resource: repo://libs/partners/openai/langchain_openai/__init__.py
   - id: openwiki-source-48ce5ee900993294d349b4e8
     resource: repo://libs/standard-tests/langchain_tests/__init__.py
-generated: { by: "openwiki/0.5.0", at: "2026-11-24T08:17:18.845Z" }
+generated: { by: "openwiki/0.5.0", at: "2026-11-27T08:17:03.934Z" }
 verified:
   - by: openwiki/0.5.0
-    at: 2026-11-24T08:17:18.845Z
+    at: 2026-11-27T08:17:03.934Z
 ---
 
 ## Welcome to LangChain Development
@@ -60,7 +60,7 @@ LangChain is organized as a **three-layer architecture** in `/libs/`:
 
 ```
 /libs/
-├── core/              # langchain-core (v1.8.4): Base abstractions (Runnable, BaseChatModel, tools, prompts, messages)
+├── core/              # langchain-core (v1.8.5): Base abstractions (Runnable, BaseChatModel, tools, prompts, messages)
 ├── langchain/         # langchain-classic (v1.1.0): Legacy orchestration layer (no new features)
 ├── langchain_v1/      # langchain (v1.5.2): Agent orchestration, factory, middleware
 ├── partners/          # Provider-specific integrations (OpenAI, Anthropic, Ollama, etc.)
@@ -282,7 +282,7 @@ core/
 └── pyproject.toml        # Package deps and metadata
 ```
 
-**langchain/** — Legacy orchestration layer (langchain-classic v1.0.8, read-only)
+**langchain/** — Legacy orchestration layer (langchain-classic v1.1.0, read-only)
 ```
 langchain/
 ├── langchain_classic/    # Legacy package (no new features)
@@ -291,7 +291,7 @@ langchain/
 └── pyproject.toml
 ```
 
-**langchain_v1/** — Modern agent orchestration (langchain package v1.5.0)
+**langchain_v1/** — Modern agent orchestration (langchain package v1.5.2)
 ```
 langchain_v1/
 ├── langchain/
